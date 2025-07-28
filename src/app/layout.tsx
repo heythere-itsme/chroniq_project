@@ -22,11 +22,12 @@ const bowlbyOne = Bowlby_One({
 
 export const metadata: Metadata = {
   title: 'ChroniQ',
-  description: 'Your Goto Task Management App',
+  description: 'Your Go to Task Management App',
   icons: {
     icon: '/favicon.svg',
   }
 };
+// Adding this comment for practice
 
 const RootLayout = ({children,} : {children: React.ReactNode}) => {
 
