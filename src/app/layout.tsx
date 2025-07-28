@@ -28,6 +28,8 @@ export const metadata: Metadata = {
   }
 };
 // Adding this comment for practice
+// This change is for feature branch
+// what happened
 
 const RootLayout = ({children,} : {children: React.ReactNode}) => {
 
