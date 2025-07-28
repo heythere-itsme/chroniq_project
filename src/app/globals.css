@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 30%);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@theme inline {
+  --font-main: var(--font-bruno-ace);
+  --font-sec: var(--font-afacad);
+  --font-ter: var(--font-bowlby-one);
+  --text-1: 36px;
+  --text-2: 20px;
+  --text-3: 16px;
+  --text-4: 12px;
+  --color-alert-accent: rgba(237, 66, 69, 1);
+  --color-block-accent: rgba(153, 170, 181, 1);
+  --color-hold-accent: rgba(254, 231, 92, 1);
+  --color-primary-accent: rgba(42, 172, 82, 1);
+  --color-primary-light: hsl(0, 0%, 15%);
+  --color-Secondary: hsl(0, 0%, 13%);
+  --color-primary-dark: hsl(0, 0%, 10%);
+  --color-Selected: hsl(138, 61%, 42%);
+  --color-text-primary: rgba(255, 255, 255, 1);
+  --color-text-secondary: rgb(140, 142, 144, 1);
+  --shadow-prim: 0px 4px 12px rgba(15, 15, 15, 0.08);
+  --color-button-prim: hsl(0, 0%, 20%);
+  --color-button-hover: hsl(0, 0%, 17%);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+* {
+  @apply font-sec text-text-primary;
+}
+
+h1 {
+  @apply text-[48px];
+}
+
+h2 {
+  @apply text-1;
+}
+
+h3 {
+  @apply text-2;
+}
+
+h4 {
+  @apply text-3;
+}
+
+h5 {
+  @apply text-4;
+}
+
+.auth {
+  @apply flex flex-col gap-[10px];
+
+  Input {
+    @apply h-[44px] font-sec text-3 w-[300px];
+  }
+
+  Button {
+    @apply text-3;
+  }
+}
+
+.auth-block {
+  @apply h-fit w-fit py-8 px-20 bg-Secondary rounded-[10px] shadow-prim;
+}
+
+.landing-Page {
+  @apply h-screen bg-primary-dark;
+
+}
+
+.sidebar {
+  @apply pt-[48px] space-y-[20px] flex flex-col items-center;
+
+  > * {
+    @apply space-y-[12px];
+  }
+}
+
+.SubTask-Row {
+  @apply flex items-center gap-2 bg-primary-light w-fit py-1 px-2 ml-2 rounded-[8px];
+}
+
+.popOverStyle {
+  @apply h-[800px] pl-5;
+
+  Input {
+    @apply bg-Secondary rounded-[4px] w-[500px] h-fit py-2 hover:bg-primary-light;
+  }
+}
+
+ul.task-list {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+li.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-item > label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.task-item input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.1);
+}
