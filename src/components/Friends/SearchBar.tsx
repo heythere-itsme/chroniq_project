@@ -6,11 +6,18 @@ import { UserPlus } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
+type userType = {
+    id: string,
+    name: string,
+    user_name: string,
+    avatar_url: string
+}
+
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<userType[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const supabase = createClient();
 
   useEffect(() => {
@@ -34,7 +41,7 @@ const SearchBar = () => {
     };
 
     fetchData();
-  }, [searchQuery]);
+  }, [searchQuery, supabase]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -62,7 +69,7 @@ const SearchBar = () => {
 
       {showDropdown && results.length > 0 && (
         <div className="text-white space-y-2 py-2 text-sm px-3 absolute bg-primary-light w-50 rounded-[4px] top-12 left-5 shadow-2xl z-50">
-          {results.map((user) => (
+          {results.map((user : userType) => (
             <div
               key={user.id}
               className="py-1 rounded-[4px] px-3 items-center hover:bg-Secondary cursor-pointer flex justify-between"
