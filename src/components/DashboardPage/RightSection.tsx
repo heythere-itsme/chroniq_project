@@ -1,6 +1,7 @@
 import React from "react";
 import SidebarCalendar from "../Sidebar/SidebarCalendar";
 import TimerRow from "../Sidebar/TimerRow";
+import SideNotifi from "../Sidebar/SideNotifi";
 
 const RightSection = () => {
   return (
@@ -11,6 +12,7 @@ const RightSection = () => {
       </h2>
       <SidebarCalendar />
       <TimerRow />
+      <SideNotifi />
     </div>
   );
 };
