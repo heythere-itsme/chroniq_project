@@ -1,4 +1,5 @@
 import React from "react";
+import SidebarCalendar from "../Sidebar/SidebarCalendar";
 
 const RightSection = () => {
   return (
@@ -7,6 +8,7 @@ const RightSection = () => {
         {new Date().toLocaleString("en-GB", { month: "short", day: "2-digit" })}
         , {new Date().getFullYear()}
       </h2>
+      <SidebarCalendar />
     </div>
   );
 };
