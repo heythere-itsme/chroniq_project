@@ -66,7 +66,7 @@ const Clock = () => {
       </div>
 
       <div className="flex items-center gap-5 mt-3 mx-auto">
-        <button onClick={handleStart}>
+        <button onClick={handleStart} className="cursor-pointer">
           {isRunning ? <Pause /> : <Play />}
         </button>
       </div>

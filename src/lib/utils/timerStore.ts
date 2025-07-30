@@ -17,6 +17,8 @@ type TimerStore = {
   setTimer: () => void;
 };
 
+let intervalId: NodeJS.Timeout | null = null;
+
 export const useTimerStore = create<TimerStore>((set, get) => ({
   timers: {
     default: {
@@ -73,6 +75,13 @@ export const useTimerStore = create<TimerStore>((set, get) => ({
           },
         },
       }));
+
+      if (!intervalId) {
+      intervalId = setInterval(() => {
+        get().incrementTimer(); // call increment globally
+      }, 1000);
+    }
+
     } else {
       // Pause timer, calculate elapsed time
       const now = Date.now();
@@ -89,6 +98,10 @@ export const useTimerStore = create<TimerStore>((set, get) => ({
           },
         },
       }));
+      if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
     }
   },
 
