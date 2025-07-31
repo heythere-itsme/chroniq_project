@@ -1,6 +1,5 @@
 import { createServer } from "@/lib/supabase/server";
 
-
 export const getUserDetails = async () => {
   const supabase = await createServer();
   const {

@@ -1,11 +1,11 @@
 'use client'
-import { CircleUserRound } from 'lucide-react'
+import Image from 'next/image';
 import React from 'react'
 
 const FriendRow = ({url ,name, lastMsg, time, onClick} : {url?: string; name: string; lastMsg: string; time: string; onClick?: () => void}) => {
   return (
     <div className='bg-primary-dark rounded-[8px] flex gap-3 items-center px-2 py-1 cursor-pointer' onClick={onClick}>
-        <CircleUserRound size={30} />
+        <Image src={url} width={30} height={30} alt='avatar' className='rounded-full'/>
         <div className='w-45'>
             <div className='flex justify-between items-center'>
                 <h4>{name}</h4>

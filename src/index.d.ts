@@ -33,3 +33,21 @@ export type noteType = {
   updated_at: Date;
   is_deleted: boolean;
 };
+
+export type chatType = {
+  id: string;
+  created_by: string;
+  created_at: Date;
+  reciever: string;
+  status: "pending" | "friends" | "blocked"
+}
+
+export type messgType = {
+  id: string;
+  chat_id: string;
+  created_at: Date;
+  edited_at: Date;
+  sender_id: string;
+  content: JSON;
+  type: "text" | "image" | "task" | "meeting";
+}
